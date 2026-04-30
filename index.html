@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deposyt | Premium Merchant Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,90 +39,265 @@
         }
     </script>
     <style>
-        body { background-color: #FFFFFF; color: #2A2928; font-family: 'Inter', sans-serif; }
-        .bg-light-blue { background-color: #E8F4FF; }
-        .text-gradient { background: linear-gradient(to right, #006DFF, #006E66); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .btn-black { background-color: #000000; color: #FFFFFF; transition: all 0.3s ease; }
-        .btn-black:hover { background-color: #333333; transform: translateY(-2px); }
-        .card-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.05); }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-open .accordion-content { max-height: 200px; }
-        .accordion-open .accordion-icon { transform: rotate(180deg); }
-        .swash-underline { position: relative; display: inline-block; z-index: 1; }
-        .swash-underline::after { 
-            content: ''; 
-            position: absolute; 
-            left: -10%; 
-            bottom: -5px; 
-            width: 120%; 
-            height: 18px; 
-            background: #006DFF; 
-            opacity: 0.9; 
-            z-index: -1; 
+        body {
+            background-color: #FFFFFF;
+            color: #2A2928;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-light-blue {
+            background-color: #E8F4FF;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #006DFF, #006E66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-black {
+            background-color: #000000;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+
+        .btn-black:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-open .accordion-content {
+            max-height: 200px;
+        }
+
+        .accordion-open .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .swash-underline {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .swash-underline::after {
+            content: '';
+            position: absolute;
+            left: -10%;
+            bottom: -5px;
+            width: 120%;
+            height: 18px;
+            background: #006DFF;
+            opacity: 0.9;
+            z-index: -1;
             transform: rotate(-1.5deg);
             clip-path: polygon(2% 85%, 15% 75%, 35% 82%, 55% 70%, 75% 78%, 95% 65%, 100% 100%, 0% 100%);
             border-radius: 40% 60% 20% 10% / 100% 100% 0 0;
         }
 
         @keyframes slide-up-fade {
-            0% { transform: translateY(40px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes bg-shape-reveal {
-            0% { transform: translate(100px, 100px); opacity: 0; }
-            100% { transform: translate(0, 0); opacity: 0.1; }
+            0% {
+                transform: translate(100px, 100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 0.1;
+            }
         }
 
         @keyframes phone-reveal {
-            0% { transform: translateY(60px) scale(0.9) rotate(-8deg); opacity: 0; }
-            100% { transform: translateY(0) scale(1) rotate(-3deg); opacity: 1; }
+            0% {
+                transform: translateY(60px) scale(0.9) rotate(-8deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) scale(1) rotate(-3deg);
+                opacity: 1;
+            }
         }
 
         @keyframes card-reveal {
-            0% { transform: translateX(150px) translateY(50px) rotate(20deg); opacity: 0; }
-            100% { transform: translateX(0) translateY(0) rotate(-15deg); opacity: 1; }
+            0% {
+                transform: translateX(150px) translateY(50px) rotate(20deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0) translateY(0) rotate(-15deg);
+                opacity: 1;
+            }
         }
 
         @keyframes icon-pop-bounce {
-            0% { transform: scale(0); opacity: 0; }
-            70% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         @keyframes float-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
-        .premium-ease { transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
-        
-        .anim-bg-shape { animation: bg-shape-reveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        
-        .anim-title { animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; }
-        .anim-subtitle { animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards; }
-        .anim-info { animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; }
-        .anim-cta { animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards; }
+        .premium-ease {
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-        .anim-phone { animation: phone-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards; }
-        .anim-card { animation: card-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards; }
-        
+        .anim-bg-shape {
+            animation: bg-shape-reveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .anim-title {
+            animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+
+        .anim-subtitle {
+            animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+        }
+
+        .anim-info {
+            animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+        }
+
+        .anim-cta {
+            animation: slide-up-fade 1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+        }
+
+        .anim-phone {
+            animation: phone-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+        }
+
+        .anim-card {
+            animation: card-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+        }
+
         /* Individual Icon Animations */
-        .anim-icon-1 { animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.0s forwards, float-subtle 4s ease-in-out 1.8s infinite; }
-        .anim-icon-2 { animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s forwards, float-subtle 5s ease-in-out 1.9s infinite; }
-        .anim-icon-3 { animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s forwards, float-subtle 4.5s ease-in-out 2.0s infinite; }
-        .anim-icon-4 { animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.3s forwards, float-subtle 5.5s ease-in-out 2.1s infinite; }
+        .anim-icon-1 {
+            animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.0s forwards, float-subtle 4s ease-in-out 1.8s infinite;
+        }
+
+        .anim-icon-2 {
+            animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s forwards, float-subtle 5s ease-in-out 1.9s infinite;
+        }
+
+        .anim-icon-3 {
+            animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s forwards, float-subtle 4.5s ease-in-out 2.0s infinite;
+        }
+
+        .anim-icon-4 {
+            animation: icon-pop-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.3s forwards, float-subtle 5.5s ease-in-out 2.1s infinite;
+        }
+
+        /* Scroll Reveal Base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-stagger.active > * {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .reveal-stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-stagger.active > *:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-stagger.active > *:nth-child(3) { transition-delay: 0.3s; }
+        .reveal-stagger.active > *:nth-child(4) { transition-delay: 0.4s; }
 
         @media (prefers-reduced-motion: reduce) {
-            .anim-bg-shape, .anim-title, .anim-subtitle, .anim-info, .anim-cta, .anim-phone, .anim-card, .anim-icon-left, .anim-icon-right {
+            .reveal, .reveal-left, .reveal-right, .reveal-stagger > * {
                 animation: none !important;
+                transition: none !important;
                 opacity: 1 !important;
                 transform: none !important;
             }
         }
     </style>
 </head>
+
 <body class="font-sans antialiased">
 
     <!-- Header -->
@@ -128,17 +305,17 @@
         <nav class="container mx-auto px-4 py-4 flex items-center">
             <!-- Logo -->
             <div>
-                <img src="https://www.deposyt.com/wp-content/uploads/2022/08/deposyt-logo-v2.svg" alt="Deposyt Logo" class="h-6">
+                <img src="deposyt-logo-v2.svg" alt="Deposyt Logo" class="h-6">
             </div>
-            
+
             <!-- Spacer to push everything to right -->
             <div class="flex-1"></div>
 
             <!-- Nav Links -->
             <div class="hidden xl:flex space-x-5 text-sm font-semibold text-brand-dark/70 mr-6">
-                <a href="#why-us" class="hover:text-brand-blue transition-colors">Why Us?</a>
+                <a href="#Home" class="hover:text-brand-blue transition-colors">Home</a>
                 <a href="#solutions" class="hover:text-brand-blue transition-colors">Solutions</a>
-                <a href="#industries" class="hover:text-brand-blue transition-colors">Industries We Service</a>
+                <a href="#industries-we-service" class="hover:text-brand-blue transition-colors">Industries We Service</a>
                 <a href="#funding" class="hover:text-brand-blue transition-colors">Funding</a>
                 <a href="#partners" class="hover:text-brand-blue transition-colors">Partners</a>
                 <a href="#agents" class="hover:text-brand-blue transition-colors">Agents</a>
@@ -146,8 +323,11 @@
 
             <!-- CTA Buttons -->
             <div class="flex items-center space-x-3 justify-end">
-                <a href="#get-started" class="border border-brand-dark px-6 py-2 rounded-lg text-sm font-bold hover:bg-brand-dark hover:text-white transition-all whitespace-nowrap">Get Started</a>
-                <a href="#" class="bg-gray-100 px-6 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all">Login</a>
+                <a href="#get-started"
+                    class="border border-brand-dark px-6 py-2 rounded-lg text-sm font-bold hover:bg-brand-dark hover:text-white transition-all whitespace-nowrap">Get
+                    Started</a>
+                <a href="#"
+                    class="bg-gray-100 px-6 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all">Login</a>
             </div>
         </nav>
     </header>
@@ -155,7 +335,9 @@
     <!-- Hero Section -->
     <section id="why-us" class="relative pt-40 pb-24 overflow-hidden bg-white">
         <!-- Abstract Background Shape -->
-        <div class="absolute right-0 bottom-0 w-1/2 h-full bg-brand-blue opacity-0 anim-bg-shape rounded-tl-[20rem] z-0 pointer-events-none"></div>
+        <div
+            class="absolute right-0 bottom-0 w-1/2 h-full bg-brand-blue opacity-0 anim-bg-shape rounded-tl-[20rem] z-0 pointer-events-none">
+        </div>
 
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center relative z-10">
             <!-- Left Content: Text & CTA -->
@@ -168,57 +350,92 @@
                 </p>
 
                 <!-- Sell/Receive Graphic -->
-                <div class="opacity-0 anim-info flex items-center space-x-6 mb-10 bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-gray-100 inline-flex">
+                <div
+                    class="opacity-0 anim-info flex items-center space-x-6 mb-10 bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-gray-100 inline-flex">
                     <div class="flex items-center space-x-3">
-                        <img src="https://www.deposyt.com/wp-content/uploads/2022/08/sell-receive.png" alt="Sell $100 Receive $100" class="h-10">
+                        <img src="https://www.deposyt.com/wp-content/uploads/2022/08/sell-receive.png"
+                            alt="Sell $100 Receive $100" class="h-10">
                     </div>
                 </div>
 
                 <!-- Google Reviews -->
                 <div class="opacity-0 anim-info flex items-center space-x-4 mb-10">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="Google" class="h-5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="Google"
+                        class="h-5">
                     <div class="flex items-center text-yellow-400">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                            </path>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                            </path>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                            </path>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                            </path>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                            <path
+                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+                            </path>
+                        </svg>
                     </div>
-                    <span id="hero-trust" class="text-sm font-bold text-brand-dark tracking-tight"><!-- Loaded via JSON --></span>
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span id="hero-trust"
+                        class="text-sm font-bold text-brand-dark tracking-tight"><!-- Loaded via JSON --></span>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
                 </div>
 
                 <!-- CTA Button -->
                 <div class="opacity-0 anim-cta flex flex-col items-center lg:items-start">
-                    <a href="#get-started" class="w-full sm:w-auto btn-black py-5 px-12 rounded-xl text-lg font-black flex items-center justify-center space-x-4 shadow-2xl transform hover:scale-105 transition-all">
-                        <img src="https://www.deposyt.com/wp-content/uploads/2022/08/deposyt-logo-v2.svg" alt="Z" class="h-6 brightness-0 invert">
+                    <a href="#get-started"
+                        class="w-full sm:w-auto btn-black py-5 px-12 rounded-xl text-lg font-black flex items-center justify-center space-x-4 shadow-2xl transform hover:scale-105 transition-all">
+                        <img src="deposyt-logo-v2.svg" alt="Z" class="h-6 brightness-0 invert">
                         <span id="hero-cta-text">Get Processing Now</span>
                     </a>
-                    <p id="hero-reviews" class="mt-6 text-sm font-bold text-brand-dark/70 tracking-tight"><!-- Loaded via JSON --></p>
+                    <p id="hero-reviews" class="mt-6 text-sm font-bold text-brand-dark/70 tracking-tight">
+                        <!-- Loaded via JSON -->
+                    </p>
                 </div>
             </div>
 
             <!-- Right Content: Animated Visuals -->
-            <div class="lg:w-1/2 relative h-[700px] flex items-center justify-center">
+            <div class="lg:w-1/2 relative h-[800px] flex items-center justify-center lg:pl-40">
                 <!-- iPhone Phone Base -->
-                <img src="assets/img/hero/phone.png" alt="Phone" class="opacity-0 anim-phone relative z-20 w-full lg:w-[110%] h-auto drop-shadow-3xl">
-                
+                <img src="assets/img/hero/phone.png" alt="Phone"
+                    class="opacity-0 anim-phone relative z-20 w-full lg:w-[230%] h-auto drop-shadow-3xl">
+
                 <!-- Black Credit Card -->
-                <img src="assets/img/hero/card.png" alt="Card" class="opacity-0 anim-card absolute z-30 w-3/4 lg:w-[65%] h-auto right-[5%] top-[35%] drop-shadow-2xl">
-                
+                <img src="assets/img/hero/card.png" alt="Card"
+                    class="opacity-0 anim-card absolute z-30 w-3/4 lg:w-[58%] h-auto right-[15%] top-[50%] drop-shadow-2xl">
+
                 <!-- Floating Icons -->
                 <!-- Purple % -->
-                <img src="assets/img/hero/percent-purple.png" alt="Percentage" class="opacity-0 anim-icon-1 absolute z-10 w-[30%] lg:w-[40%] h-auto -left-[10%] top-[10%]">
-                
+                <img src="assets/img/hero/percent-purple.png" alt="Percentage"
+                    class="opacity-0 anim-icon-1 absolute z-40 w-[35%] lg:w-[55%] h-auto left-[5%] top-[8%]">
+
                 <!-- Blue zigzag -->
-                <img src="assets/img/hero/zigzag-blue.png" alt="Zigzag Blue" class="opacity-0 anim-icon-2 absolute z-10 w-[24%] lg:w-[32%] h-auto -left-[5%] bottom-[15%]">
-                
+                <img src="assets/img/hero/zigzag-blue.png" alt="Zigzag Blue"
+                    class="opacity-0 anim-icon-2 absolute z-40 w-[30%] lg:w-[45%] h-auto left-[8%] bottom-[12%]">
+
                 <!-- Green dollar -->
-                <img src="assets/img/hero/dollar-green.png" alt="Dollar Green" class="opacity-0 anim-icon-3 absolute z-10 w-[35%] lg:w-[50%] h-auto -right-[10%] -top-[10%]">
-                
+                <img src="assets/img/hero/dollar-green.png" alt="Dollar Green"
+                    class="opacity-0 anim-icon-3 absolute z-40 w-[40%] lg:w-[65%] h-auto right-[5%] top-[5%]">
+
                 <!-- Pink zigzag -->
-                <img src="assets/img/hero/zigzag-pink.png" alt="Zigzag Pink" class="opacity-0 anim-icon-4 absolute z-10 w-[24%] lg:w-[32%] h-auto right-[5%] bottom-[5%]">
-                
+                <img src="assets/img/hero/zigzag-pink.png" alt="Zigzag Pink"
+                    class="opacity-0 anim-icon-4 absolute z-40 w-[30%] lg:w-[45%] h-auto right-[8%] bottom-[10%]">
+
                 <!-- Background Glow (Soft accent) -->
                 <div class="absolute w-[140%] h-[140%] bg-brand-blue/5 rounded-full blur-[120px] z-0"></div>
             </div>
@@ -229,35 +446,159 @@
     <section class="py-8 bg-[#E8F4FF]/30 border-y border-gray-100">
         <div class="container mx-auto px-6 text-center">
             <p class="text-xl lg:text-2xl font-bold text-brand-dark">
-                America's <span class="swash-underline">#1 Payment Processor</span> for <span class="text-brand-blue">Coaches, Consultants, Creators, Digital Marketers, and Publishers!</span>
+                America's <span class="swash-underline">#1 Payment Processor</span> for <span
+                    class="text-brand-blue">Coaches, Consultants, Creators, Digital Marketers, and Publishers!</span>
             </p>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-32 bg-white">
+    <!-- Solutions Section (How It Works) -->
+    <section id="solutions" class="py-32 bg-[#F9FAFB] overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="max-w-3xl mb-20">
-                <h2 class="text-5xl font-black mb-6 text-brand-dark">Omnichannel <span class="text-brand-blue">Solutions</span></h2>
-                <p class="text-brand-dark/50 text-lg">No matter how you sell, we provide the tools to scale your revenue without the traditional overhead.</p>
-            </div>
-            
-            <div id="solutions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Loaded via JSON -->
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left Side: Large Visual Card -->
+                <div class="lg:w-1/2 reveal-left">
+                    <div class="relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-brand-blue/20 to-brand-green/20 rounded-[2.5rem] blur-2xl group-hover:opacity-100 transition duration-1000 opacity-0"></div>
+                        <div class="relative bg-white p-4 rounded-[2rem] shadow-2xl overflow-hidden border border-gray-100">
+                            <img src="assets/img/solutions-hero.png" alt="How Deposyt Works" class="w-full h-auto rounded-[1.5rem] transform group-hover:scale-105 transition duration-700">
+                            <!-- Overlay Badge -->
+                            <div class="absolute top-8 right-8 bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-xl flex items-center space-x-3 border border-white/50">
+                                <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+                                <span class="text-sm font-bold text-brand-dark">Live Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Content Area -->
+                <div class="lg:w-1/2 reveal-right">
+                    <div class="max-w-xl">
+                        <div class="inline-flex items-center px-4 py-2 rounded-full bg-brand-blue/10 text-brand-blue text-sm font-bold mb-6">
+                            <span>The Future of Payments</span>
+                        </div>
+                        <h2 class="text-5xl lg:text-6xl font-black text-brand-dark leading-tight mb-8">
+                            How <span class="text-brand-blue">Deposyt™</span> Works
+                        </h2>
+                        <p class="text-xl text-brand-dark/60 mb-12 leading-relaxed">
+                            Start Processing Payments Today In Just <span class="font-bold text-brand-blue">3 Simple Steps</span>. We've simplified merchant services to get you running in minutes, not days.
+                        </p>
+
+                        <!-- Numbered Steps -->
+                        <div class="space-y-8 reveal-stagger">
+                            <div class="flex items-start gap-6 group">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center text-2xl font-black text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                                    1
+                                </div>
+                                <div class="pt-2">
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Fill Out Your Sign Up Form</h3>
+                                    <p class="text-brand-dark/50">Simple, paperless onboarding in under 5 minutes.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center text-2xl font-black text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                                    2
+                                </div>
+                                <div class="pt-2">
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Get Approved</h3>
+                                    <p class="text-brand-dark/50">Instant underwriting for qualified merchants.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-white shadow-lg border border-gray-100 flex items-center justify-center text-2xl font-black text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                                    3
+                                </div>
+                                <div class="pt-2">
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Start accepting payments!</h3>
+                                    <p class="text-brand-dark/50">Full integration with your existing tech stack.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-16 reveal">
+                            <a href="#get-started" class="btn-black py-5 px-10 rounded-xl text-lg font-black inline-flex items-center space-x-3 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                                <img src="deposyt-logo-v2.svg" alt="Z" class="h-5 brightness-0 invert">
+                                <span>Get Processing Now</span>
+                            </a>
+                            <p class="mt-4 text-sm font-bold text-brand-dark/40 ml-2">Get Started Quick & Easy.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section id="industries" class="py-32 bg-gray-50">
+
+    <!-- Stress Free Analysis Section -->
+    <section class="py-24 bg-white overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl font-black mb-6 tracking-tight text-brand-dark">Industries We <span class="text-brand-blue italic">Service</span></h2>
-                <p class="text-brand-dark/50 max-w-xl mx-auto">From tech startups to traditional retail, we have the specialized expertise your vertical requires.</p>
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal-left">
+                    <img src="https://www.deposyt.com/wp-content/uploads/2022/08/stress-free-analysis.png" alt="Analysis" class="w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 reveal-right">
+                    <h2 class="text-4xl lg:text-5xl font-black text-brand-dark mb-8 leading-tight">
+                        Stress Free Analysis And Priority Onboarding
+                    </h2>
+                    <p class="text-lg text-brand-dark/60 mb-10 leading-relaxed">
+                        In under 10 minutes, you will be able to offload the burden of obtaining and sustaining the bloodline of your business- Your Merchant Account Relationships. We'll make sure your business runs smoothly from the first conversation.
+                    </p>
+                    <a href="#get-started" class="inline-block border-2 border-brand-dark px-10 py-4 rounded-lg font-bold hover:bg-brand-dark hover:text-white transition-all">Get Started</a>
+                </div>
             </div>
-            
-            <div id="industries-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <!-- Loaded via JSON -->
+        </div>
+    </section>
+
+    <!-- Reliable Team Section -->
+    <section class="py-24 bg-[#F1FFF4]/50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal-left order-2 lg:order-1">
+                    <img src="https://www.deposyt.com/wp-content/uploads/2022/08/reliable-team.png" alt="Team" class="w-full h-auto">
+                </div>
+                <div class="lg:w-1/2 reveal-right order-1 lg:order-2">
+                    <h2 class="text-4xl lg:text-5xl font-black text-brand-dark mb-8 leading-tight">
+                        A Team You Can Rely On.
+                    </h2>
+                    <p class="text-lg text-brand-dark/60 mb-10 leading-relaxed">
+                        When you partner with Deposyt, your team has unlimited access to a premium merchant account manager. No 1-800 numbers, no hoops to jump through. Ask questions via text, phone, and email and get answers when you need them most.
+                    </p>
+                    <a href="#get-started" class="inline-block border-2 border-brand-dark px-10 py-4 rounded-lg font-bold hover:bg-brand-dark hover:text-white transition-all">Try Us Now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Service Section -->
+    <section id="industries-we-service" class="py-32 bg-white overflow-hidden scroll-mt-24">
+        <div class="container mx-auto px-6">
+            <!-- Heading Area -->
+            <div class="text-center mb-20 max-w-4xl mx-auto">
+                <h2 class="text-6xl lg:text-8xl font-black text-brand-dark mb-10 reveal">
+                    Industries We Service
+                </h2>
+                <p class="text-2xl text-brand-dark font-medium mb-6 reveal">
+                    Every client who accepts credit card payments receives a uniquely crafted merchant account management solution delivered by our payments team.
+                </p>
+                <p class="text-lg text-brand-dark/50 mb-12 reveal">
+                    We understand that industries are ever-changing, and that's why we are always there to support and guide your company in any situation.
+                </p>
+
+                <!-- Center CTA -->
+                <div class="reveal mb-6">
+                    <a href="#get-started" class="btn-black py-5 px-12 rounded-xl text-lg font-black inline-flex items-center space-x-4 shadow-2xl hover:scale-105 transition-all">
+                        <img src="deposyt-logo-v2.svg" alt="Z" class="h-6 brightness-0 invert">
+                        <span>Get Processing Now</span>
+                    </a>
+                </div>
+                <p class="text-sm font-bold text-brand-dark reveal">Claim Your FREE Consultation Today.</p>
+            </div>
+
+            <!-- Industries Grid -->
+            <div id="industries-we-service-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+                <!-- Populated via high-fidelity JS array -->
             </div>
         </div>
     </section>
@@ -265,10 +606,11 @@
     <!-- Funding Section -->
     <section id="funding" class="py-32 relative overflow-hidden bg-white">
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
-            <div class="lg:w-1/2">
-                <img src="assets/img/funding.png" alt="Capital Growth" class="rounded-[3rem] shadow-2xl border border-gray-100">
+            <div class="lg:w-1/2 reveal-left">
+                <img src="assets/img/funding.png" alt="Capital Growth"
+                    class="rounded-[3rem] shadow-2xl border border-gray-100">
             </div>
-            <div class="lg:w-1/2">
+            <div class="lg:w-1/2 reveal-right">
                 <h2 id="funding-title" class="text-5xl font-black mb-8 text-brand-dark"><!-- Loaded via JSON --></h2>
                 <p id="funding-description" class="text-brand-dark/50 text-lg mb-10 leading-relaxed">
                     <!-- Loaded via JSON -->
@@ -276,7 +618,9 @@
                 <ul id="funding-features" class="space-y-6 mb-12">
                     <!-- Loaded via JSON -->
                 </ul>
-                <a id="funding-cta" href="#get-started" class="inline-block bg-gray-900 hover:bg-black text-white font-bold py-4 px-10 rounded-full transition-all uppercase tracking-widest text-xs">Explore Funding</a>
+                <a id="funding-cta" href="#get-started"
+                    class="inline-block bg-gray-900 hover:bg-black text-white font-bold py-4 px-10 rounded-full transition-all uppercase tracking-widest text-xs">Explore
+                    Funding</a>
             </div>
         </div>
     </section>
@@ -284,18 +628,24 @@
     <!-- Partners & Agents Section -->
     <section id="partners" class="py-32 bg-brand-lightBlue">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal-stagger">
                 <!-- Partners -->
                 <div id="partners-box" class="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl">
-                    <h2 id="partners-title" class="text-4xl font-black mb-6 text-brand-dark"><!-- Loaded via JSON --></h2>
-                    <p id="partners-description" class="text-brand-dark/50 mb-8 leading-relaxed"><!-- Loaded via JSON --></p>
-                    <a id="partners-cta" href="#get-started" class="btn-black py-4 px-8 rounded-xl font-bold inline-block">Partner Sign Up</a>
+                    <h2 id="partners-title" class="text-4xl font-black mb-6 text-brand-dark"><!-- Loaded via JSON -->
+                    </h2>
+                    <p id="partners-description" class="text-brand-dark/50 mb-8 leading-relaxed">
+                        <!-- Loaded via JSON -->
+                    </p>
+                    <a id="partners-cta" href="#get-started"
+                        class="btn-black py-4 px-8 rounded-xl font-bold inline-block">Partner Sign Up</a>
                 </div>
                 <!-- Agents -->
                 <div id="agents-box" class="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl">
                     <h2 id="agents-title" class="text-4xl font-black mb-6 text-brand-dark"><!-- Loaded via JSON --></h2>
-                    <p id="agents-description" class="text-brand-dark/50 mb-8 leading-relaxed"><!-- Loaded via JSON --></p>
-                    <a id="agents-cta" href="#get-started" class="btn-black py-4 px-8 rounded-xl font-bold inline-block">Agent Registration</a>
+                    <p id="agents-description" class="text-brand-dark/50 mb-8 leading-relaxed"><!-- Loaded via JSON -->
+                    </p>
+                    <a id="agents-cta" href="#get-started"
+                        class="btn-black py-4 px-8 rounded-xl font-bold inline-block">Agent Registration</a>
                 </div>
             </div>
         </div>
@@ -304,9 +654,10 @@
     <!-- FAQ Section -->
     <section class="py-32 bg-white">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-5xl font-black mb-16 text-center text-brand-dark">Frequently Asked <span class="text-brand-blue">Questions</span></h2>
-            
-            <div id="faq-list" class="space-y-4">
+            <h2 class="text-5xl font-black mb-16 text-center text-brand-dark reveal">Frequently Asked <span
+                    class="text-brand-blue">Questions</span></h2>
+
+            <div id="faq-list" class="space-y-4 reveal-stagger">
                 <!-- Loaded via JSON -->
             </div>
         </div>
@@ -315,22 +666,30 @@
     <!-- Contact Section -->
     <section id="get-started" class="py-32 bg-brand-lightBlue">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="bg-white p-12 lg:p-20 rounded-[4rem] shadow-2xl relative overflow-hidden">
+            <div class="bg-white p-12 lg:p-20 rounded-[4rem] shadow-2xl relative overflow-hidden reveal">
                 <div class="text-center mb-16">
-                    <h2 id="contact-title" class="text-5xl lg:text-7xl font-black mb-6 text-brand-dark"><!-- Loaded via JSON --></h2>
+                    <h2 id="contact-title" class="text-5xl lg:text-7xl font-black mb-6 text-brand-dark">
+                        <!-- Loaded via JSON -->
+                    </h2>
                     <p id="contact-subtitle" class="text-brand-dark/50 text-lg"><!-- Loaded via JSON --></p>
                 </div>
-                
+
                 <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="Full Name" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
-                    <input type="email" placeholder="Business Email" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
-                    <input type="text" placeholder="Business Name" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
-                    <input type="tel" placeholder="Phone Number" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="text" placeholder="Full Name"
+                        class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="email" placeholder="Business Email"
+                        class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="text" placeholder="Business Name"
+                        class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="tel" placeholder="Phone Number"
+                        class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
                     <div class="md:col-span-2">
-                        <textarea placeholder="Tell us about your business goals..." rows="4" class="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all"></textarea>
+                        <textarea placeholder="Tell us about your business goals..." rows="4"
+                            class="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all"></textarea>
                     </div>
                     <div class="md:col-span-2 text-center mt-6">
-                        <button id="contact-cta" type="submit" class="w-full btn-black py-6 rounded-full text-xl font-black uppercase tracking-widest shadow-xl">
+                        <button id="contact-cta" type="submit"
+                            class="w-full btn-black py-6 rounded-full text-xl font-black uppercase tracking-widest shadow-xl">
                             <!-- Loaded via JSON -->
                         </button>
                     </div>
@@ -344,9 +703,11 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-2">
-                    <img src="https://www.deposyt.com/wp-content/uploads/2022/08/deposyt-logo-v2.svg" alt="Deposyt Logo" class="h-8 mb-8 brightness-0 invert">
+                    <img src="https://www.deposyt.com/wp-content/uploads/2022/08/deposyt-logo-v2.svg" alt="Deposyt Logo"
+                        class="h-8 mb-8 brightness-0 invert">
                     <p class="text-gray-400 max-w-sm leading-relaxed mb-8">
-                        Leading the charge in modern merchant services. High conversion, low fees, and the technology to back it up.
+                        Leading the charge in modern merchant services. High conversion, low fees, and the technology to
+                        back it up.
                     </p>
                 </div>
                 <div>
@@ -365,7 +726,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="pt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-600">
+            <div
+                class="pt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-600">
                 <p>&copy; 2026 Deposyt. All Rights Reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -383,7 +745,7 @@
                 const heroRes = await fetch(`data/hero.json?v=${version}`);
                 const heroData = await heroRes.json();
                 console.log('Hero Data fetched:', heroData);
-                
+
                 const titleEl = document.getElementById('hero-title');
                 const subtitleEl = document.getElementById('hero-subtitle');
                 const ctaEl = document.getElementById('hero-cta-text');
@@ -399,7 +761,6 @@
                     subtitleEl.className = `${heroData.styling.fonts.sizes.subtitle} text-brand-dark/60 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed`;
                 }
                 if (ctaEl) ctaEl.innerText = heroData.text.ctaText;
-                if (secondaryEl) secondaryEl.innerText = heroData.text.secondaryText;
                 if (trustEl) trustEl.innerText = heroData.text.trustPilot;
 
                 const heroSection = document.getElementById('why-us');
@@ -409,30 +770,42 @@
                     heroSection.style.paddingBottom = heroData.styling.layout.paddingBottom;
                 }
 
-                // Load Solutions
-                const solutionsRes = await fetch(`data/solutions.json?v=${version}`);
-                const solutionsData = await solutionsRes.json();
-                const solutionsGrid = document.getElementById('solutions-grid');
-                if (solutionsGrid) {
-                    solutionsGrid.innerHTML = solutionsData.map(s => `
-                        <div class="bg-gray-50 p-10 rounded-[2rem] border border-gray-100 hover:shadow-xl transition-all group">
-                            <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-blue/20">
-                                <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${s.icon}"></path></svg>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4 text-brand-dark">${s.title}</h3>
-                            <p class="text-brand-dark/50 text-sm leading-relaxed">${s.description}</p>
-                        </div>
-                    `).join('');
-                }
 
-                // Load Industries
-                const industriesRes = await fetch(`data/industries.json?v=${version}`);
-                const industriesData = await industriesRes.json();
-                const industriesGrid = document.getElementById('industries-grid');
+                // Load Industries We Service
+                const industriesDataDetailed = [
+                    { name: "Stripe", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/stripe.png" },
+                    { name: "Shopify", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/shopify.png" },
+                    { name: "Square", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/square.png" },
+                    { name: "Paypal", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/paypal.png" },
+                    { name: "Retail", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/retail.png" },
+                    { name: "Small Business", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/small-business.png" },
+                    { name: "High Risk", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/high-risk.png" },
+                    { name: "B2B", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/b2b.png" },
+                    { name: "E-Commerce", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/ecommerce.png" },
+                    { name: "Saas", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/saas.png" },
+                    { name: "Coaching", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/coaching.png" },
+                    { name: "Diet/Fitness", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/diet-fitness.png" },
+                    { name: "Nutraceutical", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/nutraceutical.png" },
+                    { name: "CBD", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/cbd.png" },
+                    { name: "Startup", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/startup.png" },
+                    { name: "Credit Repair", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/credit-repair.png" },
+                    { name: "Multilevel", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/multilevel.png" },
+                    { name: "Jet Charter", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/jet-charter.png" },
+                    { name: "Non-Profit", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/non-profit.png" },
+                    { name: "Direct Response", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/direct-response.png" },
+                    { name: "Cash Discount", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/cash-discount.png" },
+                    { name: "Non-Profit", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/non-profit.png" },
+                    { name: "Tradeshow/Events", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/tradeshow-events.png" },
+                    { name: "And Many More!", icon: "deposyt-logo-v2.svg" }
+                ];
+                const industriesGrid = document.getElementById('industries-we-service-grid');
                 if (industriesGrid) {
-                    industriesGrid.innerHTML = industriesData.map(i => `
-                        <div class="bg-white p-6 rounded-2xl text-center border border-gray-100 hover:border-brand-blue/30 transition-all shadow-sm">
-                            <p class="text-sm font-bold uppercase tracking-widest text-brand-dark/60">${i}</p>
+                    industriesGrid.innerHTML = industriesDataDetailed.map(ind => `
+                        <div class="group bg-white p-12 rounded-xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col items-center justify-center text-center h-full min-h-[220px]">
+                            <div class="h-14 mb-8 flex items-center justify-center">
+                                <img src="${ind.icon}" alt="${ind.name}" class="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110">
+                            </div>
+                            <h3 class="text-base font-bold text-brand-dark/90 tracking-tight">${ind.name}</h3>
                         </div>
                     `).join('');
                 }
@@ -498,5 +871,46 @@
         // Use DOMContentLoaded to ensure elements exist
         document.addEventListener('DOMContentLoaded', loadContent);
     </script>
+    <script>
+        // Intersection Observer for Scroll Reveal
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Smooth Scroll with Header Offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 90;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
