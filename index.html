@@ -3,299 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deposyt | Premium Merchant Solutions</title>
+    <title>Deposyt™ - Best Online Payment Service Provider</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        premium: {
-                            dark: '#161616',
-                            gold: '#b49146',
-                            goldLight: '#d4af37',
-                            gray: '#2a2a2a',
-                            white: '#f5f5f5',
+                        brand: {
+                            blue: '#006DFF',
+                            teal: '#006E66',
+                            green: '#61CE70',
+                            dark: '#2A2928',
+                            lightBlue: '#E8F4FF',
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .text-glow { text-shadow: 0 0 30px rgba(180, 145, 70, 0.4); }
-        body { background-color: #161616; color: #f5f5f5; }
+        body { background-color: #FFFFFF; color: #2A2928; font-family: 'Inter', sans-serif; }
+        .bg-light-blue { background-color: #E8F4FF; }
+        .text-gradient { background: linear-gradient(to right, #006DFF, #006E66); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-black { background-color: #000000; color: #FFFFFF; transition: all 0.3s ease; }
+        .btn-black:hover { background-color: #333333; transform: translateY(-2px); }
+        .card-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
         .accordion-open .accordion-content { max-height: 200px; }
         .accordion-open .accordion-icon { transform: rotate(180deg); }
+        .review-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body class="antialiased">
 
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 transition-all duration-300 glass border-b border-white/5">
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-premium-gold rounded-lg flex items-center justify-center font-bold text-premium-dark text-xl">D</div>
-                <span class="text-2xl font-display font-extrabold tracking-tighter uppercase">Deposyt</span>
+                <img src="https://www.deposyt.com/wp-content/uploads/2022/08/deposyt-logo-v2.svg" alt="Deposyt Logo" class="h-8">
             </div>
             
-            <div class="hidden xl:flex space-x-6 text-[10px] font-bold uppercase tracking-widest text-white/60">
-                <a href="#why-us" class="hover:text-premium-gold transition-colors">Why Us?</a>
-                <a href="#solutions" class="hover:text-premium-gold transition-colors">Solutions</a>
-                <a href="#industries" class="hover:text-premium-gold transition-colors">Industries We Service</a>
-                <a href="#funding" class="hover:text-premium-gold transition-colors">Funding</a>
-                <a href="#partners" class="hover:text-premium-gold transition-colors">Partners</a>
-                <a href="#agents" class="hover:text-premium-gold transition-colors">Agents</a>
+            <div class="hidden xl:flex space-x-8 text-sm font-medium text-brand-dark/70">
+                <a href="#why-us" class="hover:text-brand-blue transition-colors">Why Us?</a>
+                <a href="#solutions" class="hover:text-brand-blue transition-colors">Solutions</a>
+                <a href="#industries" class="hover:text-brand-blue transition-colors">Industries</a>
+                <a href="#funding" class="hover:text-brand-blue transition-colors">Funding</a>
+                <a href="#partners" class="hover:text-brand-blue transition-colors">Partners</a>
+                <a href="#agents" class="hover:text-brand-blue transition-colors">Agents</a>
             </div>
 
             <div class="flex items-center space-x-4">
-                <a href="#" class="hidden sm:block text-xs font-bold uppercase tracking-widest hover:text-premium-gold transition-colors">Login</a>
-                <a href="#get-started" class="bg-premium-gold hover:bg-premium-goldLight text-premium-dark font-black py-2.5 px-6 rounded-full text-xs uppercase tracking-tighter transition-all">Get Started</a>
+                <a href="#get-started" class="border border-brand-dark px-6 py-2 rounded-lg text-sm font-bold hover:bg-brand-dark hover:text-white transition-all">Get Started</a>
+                <a href="#" class="bg-gray-100 px-6 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all">Login</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="why-us" class="relative pt-40 pb-24 overflow-hidden">
-        <div class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-premium-gold/10 to-transparent blur-3xl"></div>
+    <section id="why-us" class="relative pt-32 pb-20 overflow-hidden bg-light-blue">
         <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center">
             <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-                <div class="inline-block px-4 py-1 mb-6 glass rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-premium-gold border-premium-gold/20">
-                    Next Generation Payments
-                </div>
-                <h1 class="text-5xl lg:text-8xl font-display font-extrabold leading-[0.9] mb-8 tracking-tighter">
-                    We Put A <span class="text-premium-gold text-glow italic">Percentage</span> Back In Your Pocket
+                <h1 class="text-6xl lg:text-8xl font-black leading-tight mb-6 tracking-tighter text-brand-dark">
+                    We Put A <br> <span class="text-brand-blue underline decoration-brand-blue/30 underline-offset-8">Percentage</span> <br> Back In Your Pocket
                 </h1>
-                <p class="text-xl text-white/50 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    The all-in-one merchant solution with <span class="text-white font-bold">ZERO</span> credit card fees. Stop losing revenue to processing costs today.
+                <p class="text-xl text-brand-dark/70 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    The <span class="font-bold text-brand-dark">all-in-one merchant solution</span> with <span class="text-brand-blue font-black underline">ZERO</span> credit card fees.
                 </p>
+                
+                <div class="flex items-center space-x-4 mb-8 justify-center lg:justify-start">
+                    <div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-gray-100">
+                        <span class="text-xs font-bold text-gray-500 uppercase">Sell $100</span>
+                        <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        <span class="text-xs font-bold text-brand-blue uppercase">Receive $100</span>
+                    </div>
+                </div>
+
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#get-started" class="w-full sm:w-auto bg-premium-gold hover:bg-premium-goldLight text-premium-dark font-black py-5 px-12 rounded-full text-lg uppercase tracking-tight transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(180,145,70,0.3)]">
-                        Get Processing Now
+                    <a href="#get-started" class="btn-black py-4 px-10 rounded-xl text-lg font-bold flex items-center space-x-3 shadow-xl">
+                        <span>Get Processing Now</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                     </a>
+                </div>
+                
+                <p class="mt-6 text-sm font-medium text-gray-500">Claim Your FREE Consultation Today.</p>
+                
+                <div class="mt-8 flex items-center justify-center lg:justify-start space-x-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-bold text-brand-blue border-2 border-white">G</div>
+                    </div>
+                    <div class="flex items-center space-x-1 text-yellow-400">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                    </div>
+                    <span class="text-sm font-bold text-brand-dark">349 reviews</span>
                 </div>
             </div>
             <div class="lg:w-1/2 relative">
-                <div class="animate-float">
-                    <img id="hero-mockup" src="assets/img/hero.png" alt="Dashboard Preview" class="rounded-[2.5rem] shadow-2xl border border-white/10">
-                </div>
-                <div class="absolute -bottom-10 -left-10 glass p-8 rounded-3xl shadow-2xl hidden md:block border border-white/20">
-                    <div class="flex items-center space-x-5">
-                        <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center">
-                            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <div>
-                            <p class="text-[10px] text-white/40 uppercase font-bold tracking-widest">Instant Deposit</p>
-                            <p class="text-2xl font-bold font-display">$12,450.00</p>
-                        </div>
-                    </div>
-                </div>
+                <img src="https://antigravity-media-assets.s3.amazonaws.com/hero_v2.png" alt="Hero Mockup" class="w-full h-auto drop-shadow-2xl">
             </div>
         </div>
     </section>
 
     <!-- Trust Section -->
-    <section class="py-16 border-y border-white/5 bg-white/[0.01]">
+    <section class="py-12 bg-white">
         <div class="container mx-auto px-6">
-            <div class="flex flex-wrap justify-center items-center opacity-20 grayscale hover:opacity-50 transition-all duration-700">
-                <img src="assets/img/partners.png" alt="Our Partners" class="h-20 object-contain">
+            <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">America's #1 Payment Processor for Coaches, Consultants, and Creators</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-50">
+                <img src="assets/img/partners.png" alt="Partners" class="h-12 object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="py-20 bg-light-blue">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4 text-brand-dark">Top Rated Service 2026</h2>
+                <div class="flex justify-center items-center space-x-1 text-yellow-400">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                    <span class="text-xl font-bold text-brand-dark">4.9</span>
+                </div>
+                <p class="text-sm text-gray-500">verified by TrustIndex</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200"></div>
+                            <div>
+                                <h4 class="font-bold text-sm">Denise Green</h4>
+                                <p class="text-[10px] text-gray-400">2 weeks ago</p>
+                            </div>
+                        </div>
+                        <div class="text-blue-500 font-bold text-xl">G</div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">I've been a customer for years. Their fees are less than their competitors. Their tutorials are fantastic, and their client support is extremely responsive and...</p>
+                    <button class="text-brand-blue text-[10px] font-bold mt-4">Read more</button>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200"></div>
+                            <div>
+                                <h4 class="font-bold text-sm">Dr. Kate Ionelli</h4>
+                                <p class="text-[10px] text-gray-400">3 weeks ago</p>
+                            </div>
+                        </div>
+                        <div class="text-blue-500 font-bold text-xl">G</div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Mark and his team have been incredibly supportive, professional & informative every step of the way in this process. High quality service and caring professionals...</p>
+                    <button class="text-brand-blue text-[10px] font-bold mt-4">Read more</button>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-200"></div>
+                            <div>
+                                <h4 class="font-bold text-sm">Leo Barroso</h4>
+                                <p class="text-[10px] text-gray-400">1 month ago</p>
+                            </div>
+                        </div>
+                        <div class="text-blue-500 font-bold text-xl">G</div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                        <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Deposyt has been great! I was having an issue with my previous merchant not increasing my limit even though we had been processing payments with zero...</p>
+                    <button class="text-brand-blue text-[10px] font-bold mt-4">Read more</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="py-32">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mb-20">
-                <h2 class="text-5xl font-display font-extrabold mb-6">Omnichannel <span class="text-premium-gold">Solutions</span></h2>
-                <p class="text-white/40 text-lg">No matter how you sell, we provide the tools to scale your revenue without the traditional overhead.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Solution 1 -->
-                <div class="glass p-10 rounded-[2rem] hover:bg-white/[0.05] transition-all group">
-                    <div class="w-16 h-16 bg-premium-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-premium-gold/20">
-                        <svg class="w-8 h-8 text-premium-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">E-Commerce</h3>
-                    <p class="text-white/40 text-sm leading-relaxed">Seamless checkout experiences for Shopify, WooCommerce, and custom stores.</p>
-                </div>
-                <!-- Solution 2 -->
-                <div class="glass p-10 rounded-[2rem] hover:bg-white/[0.05] transition-all group">
-                    <div class="w-16 h-16 bg-premium-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-premium-gold/20">
-                        <svg class="w-8 h-8 text-premium-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Retail Point-of-Sale</h3>
-                    <p class="text-white/40 text-sm leading-relaxed">Modern hardware and software for your physical storefront and pop-up events.</p>
-                </div>
-                <!-- Solution 3 -->
-                <div class="glass p-10 rounded-[2rem] hover:bg-white/[0.05] transition-all group">
-                    <div class="w-16 h-16 bg-premium-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-premium-gold/20">
-                        <svg class="w-8 h-8 text-premium-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">B2B Invoicing</h3>
-                    <p class="text-white/40 text-sm leading-relaxed">Automated invoicing and subscription management for service businesses.</p>
-                </div>
-                <!-- Solution 4 -->
-                <div class="glass p-10 rounded-[2rem] hover:bg-white/[0.05] transition-all group">
-                    <div class="w-16 h-16 bg-premium-gold/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-premium-gold/20">
-                        <svg class="w-8 h-8 text-premium-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">High Risk</h3>
-                    <p class="text-white/40 text-sm leading-relaxed">Specialized underwriting for industries that other processors shy away from.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries Section -->
-    <section id="industries" class="py-32 bg-white/[0.02]">
+    <section id="solutions" class="py-32 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
-                <h2 class="text-5xl font-display font-extrabold mb-6 tracking-tight">Industries We <span class="text-premium-gold italic">Service</span></h2>
-                <p class="text-white/40 max-w-xl mx-auto">From tech startups to traditional retail, we have the specialized expertise your vertical requires.</p>
+                <h2 class="text-5xl font-black mb-6 text-brand-dark">Omnichannel <span class="text-brand-blue">Solutions</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Everything you need to accept payments anywhere your customers are.</p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="glass p-6 rounded-2xl text-center hover:border-premium-gold/30 transition-all">
-                    <p class="text-sm font-bold uppercase tracking-widest text-white/60">Construction</p>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center hover:border-premium-gold/30 transition-all">
-                    <p class="text-sm font-bold uppercase tracking-widest text-white/60">Restaurants</p>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center hover:border-premium-gold/30 transition-all">
-                    <p class="text-sm font-bold uppercase tracking-widest text-white/60">Medical</p>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center hover:border-premium-gold/30 transition-all">
-                    <p class="text-sm font-bold uppercase tracking-widest text-white/60">Non-Profit</p>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center hover:border-premium-gold/30 transition-all">
-                    <p class="text-sm font-bold uppercase tracking-widest text-white/60">E-Commerce</p>
-                </div>
-                <div class="glass p-6 rounded-2xl text-center hover:border-premium-gold/30 transition-all">
-                    <p class="text-sm font-bold uppercase tracking-widest text-white/60">Legal</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Funding Section -->
-    <section id="funding" class="py-32 relative overflow-hidden">
-        <div class="absolute top-1/2 left-0 -translate-y-1/2 -z-10 w-96 h-96 bg-premium-gold/5 blur-[120px]"></div>
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
-            <div class="lg:w-1/2">
-                <img src="assets/img/funding.png" alt="Capital Growth" class="rounded-[3rem] shadow-2xl border border-white/10">
-            </div>
-            <div class="lg:w-1/2">
-                <h2 class="text-5xl font-display font-extrabold mb-8">Access Capital <br><span class="text-premium-gold">When You Need It</span></h2>
-                <p class="text-white/40 text-lg mb-10 leading-relaxed">
-                    Growth requires capital. We offer flexible funding solutions and Merchant Cash Advances (MCA) that scale with your sales volume. No rigid monthly payments, just growth-oriented funding.
-                </p>
-                <ul class="space-y-6 mb-12">
-                    <li class="flex items-center space-x-4">
-                        <div class="w-6 h-6 bg-premium-gold/20 rounded-full flex items-center justify-center text-premium-gold">✓</div>
-                        <span class="text-white/70">Same-day approval available</span>
-                    </li>
-                    <li class="flex items-center space-x-4">
-                        <div class="w-6 h-6 bg-premium-gold/20 rounded-full flex items-center justify-center text-premium-gold">✓</div>
-                        <span class="text-white/70">Flexible repayment based on daily sales</span>
-                    </li>
-                    <li class="flex items-center space-x-4">
-                        <div class="w-6 h-6 bg-premium-gold/20 rounded-full flex items-center justify-center text-premium-gold">✓</div>
-                        <span class="text-white/70">No hidden application fees</span>
-                    </li>
-                </ul>
-                <a href="#get-started" class="inline-block bg-white/5 hover:bg-white/10 text-white font-bold py-4 px-10 rounded-full border border-white/10 transition-all uppercase tracking-widest text-xs">Explore Funding</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners & Agents Section -->
-    <section id="partners" class="py-32 bg-premium-gold/5">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Partners -->
-                <div id="partners" class="glass p-12 rounded-[3rem] border-white/20">
-                    <h2 class="text-4xl font-display font-extrabold mb-6">Become a <span class="text-premium-gold">Partner</span></h2>
-                    <p class="text-white/40 mb-8 leading-relaxed">Integrate our payment technology into your platform and offer your users the most competitive rates in the market.</p>
-                    <a href="#get-started" class="btn-gold inline-block">Partner Sign Up</a>
-                </div>
-                <!-- Agents -->
-                <div id="agents" class="glass p-12 rounded-[3rem] border-white/20">
-                    <h2 class="text-4xl font-display font-extrabold mb-6">Referral <span class="text-premium-gold">Agents</span></h2>
-                    <p class="text-white/40 mb-8 leading-relaxed">Earn industry-leading residuals by referring businesses to our platform. High conversion and dedicated support.</p>
-                    <a href="#get-started" class="btn-gold inline-block">Agent Registration</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-32">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-5xl font-display font-extrabold mb-16 text-center">Frequently Asked <span class="text-premium-gold">Questions</span></h2>
-            
-            <div class="space-y-4">
-                <div class="accordion-item glass rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('accordion-open')">
-                    <div class="p-6 flex justify-between items-center">
-                        <h4 class="font-bold">What are the credit card processing fees?</h4>
-                        <span class="accordion-icon transition-transform duration-300">▼</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
                     </div>
-                    <div class="accordion-content px-6 pb-6 text-white/40 text-sm">
-                        Our Zero-Fee program allows you to pass processing costs to the customer, effectively making your credit card processing costs 0%. We also offer traditional flat-rate pricing for businesses that prefer it.
-                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-brand-dark">E-Commerce</h3>
+                    <p class="text-gray-500 leading-relaxed">Accept payments on your website with our secure, lightning-fast gateway integration.</p>
                 </div>
-                <div class="accordion-item glass rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('accordion-open')">
-                    <div class="p-6 flex justify-between items-center">
-                        <h4 class="font-bold">How long does it take to get funded?</h4>
-                        <span class="accordion-icon transition-transform duration-300">▼</span>
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
                     </div>
-                    <div class="accordion-content px-6 pb-6 text-white/40 text-sm">
-                        Standard funding is next-business-day. We also offer Same-Day funding for eligible merchants, ensuring your capital is available when you need it.
-                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-brand-dark">Point of Sale</h3>
+                    <p class="text-gray-500 leading-relaxed">Modern hardware for your physical storefront. Sleek, fast, and fully integrated.</p>
                 </div>
-                <div class="accordion-item glass rounded-2xl overflow-hidden cursor-pointer" onclick="this.classList.toggle('accordion-open')">
-                    <div class="p-6 flex justify-between items-center">
-                        <h4 class="font-bold">Do you support international payments?</h4>
-                        <span class="accordion-icon transition-transform duration-300">▼</span>
+                <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-xl transition-all">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                     </div>
-                    <div class="accordion-content px-6 pb-6 text-white/40 text-sm">
-                        Yes, our gateway supports multi-currency processing and international credit card brands, allowing you to scale your business globally.
-                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-brand-dark">Mobile Payments</h3>
+                    <p class="text-gray-500 leading-relaxed">Take your business on the go. Securely accept payments from your smartphone or tablet.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="get-started" class="py-32 relative">
+    <section id="get-started" class="py-32 bg-light-blue">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="glass p-12 lg:p-20 rounded-[4rem] border-premium-gold/30 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-premium-gold/10 blur-[100px] -z-10"></div>
+            <div class="bg-white p-12 lg:p-20 rounded-[4rem] shadow-2xl relative overflow-hidden">
                 <div class="text-center mb-16">
-                    <h2 class="text-5xl lg:text-7xl font-display font-extrabold mb-6">Ready to <span class="text-premium-gold text-glow italic">Save</span>?</h2>
-                    <p class="text-white/40 text-lg">Submit your details and one of our specialists will reach out within 24 hours.</p>
+                    <h2 class="text-5xl lg:text-7xl font-black mb-6 text-brand-dark">Ready to <span class="text-brand-blue italic">Save</span>?</h2>
+                    <p class="text-gray-500 text-lg">Submit your details and one of our specialists will reach out within 24 hours.</p>
                 </div>
                 
                 <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="Full Name" class="bg-white/5 border border-white/10 rounded-2xl p-5 focus:border-premium-gold outline-none transition-all">
-                    <input type="email" placeholder="Business Email" class="bg-white/5 border border-white/10 rounded-2xl p-5 focus:border-premium-gold outline-none transition-all">
-                    <input type="text" placeholder="Business Name" class="bg-white/5 border border-white/10 rounded-2xl p-5 focus:border-premium-gold outline-none transition-all">
-                    <input type="tel" placeholder="Phone Number" class="bg-white/5 border border-white/10 rounded-2xl p-5 focus:border-premium-gold outline-none transition-all">
+                    <input type="text" placeholder="Full Name" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="email" placeholder="Business Email" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="text" placeholder="Business Name" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
+                    <input type="tel" placeholder="Phone Number" class="bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all">
                     <div class="md:col-span-2">
-                        <textarea placeholder="Tell us about your business goals..." rows="4" class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 focus:border-premium-gold outline-none transition-all"></textarea>
+                        <textarea placeholder="Tell us about your business goals..." rows="4" class="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 focus:border-brand-blue outline-none transition-all"></textarea>
                     </div>
                     <div class="md:col-span-2 text-center mt-6">
-                        <button type="submit" class="w-full bg-premium-gold text-premium-dark font-black py-6 rounded-full text-xl uppercase tracking-widest shadow-[0_0_50px_rgba(180,145,70,0.4)] hover:scale-[1.02] transition-all">
+                        <button type="submit" class="w-full btn-black py-6 rounded-full text-xl font-black uppercase tracking-widest shadow-xl">
                             Submit My Request
                         </button>
                     </div>
@@ -305,36 +269,33 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-white/5 bg-black/40">
+    <footer class="py-20 bg-brand-dark text-white">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-2">
-                    <div class="flex items-center space-x-2 mb-8">
-                        <div class="w-10 h-10 bg-premium-gold rounded-lg flex items-center justify-center font-bold text-premium-dark text-xl">D</div>
-                        <span class="text-2xl font-display font-extrabold tracking-tighter uppercase">Deposyt</span>
-                    </div>
-                    <p class="text-white/30 max-w-sm leading-relaxed mb-8">
+                    <img src="https://www.deposyt.com/wp-content/uploads/2022/08/deposyt-logo-v2.svg" alt="Deposyt Logo" class="h-8 mb-8 brightness-0 invert">
+                    <p class="text-gray-400 max-w-sm leading-relaxed mb-8">
                         Leading the charge in modern merchant services. High conversion, low fees, and the technology to back it up.
                     </p>
                 </div>
                 <div>
-                    <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-8">Quick Links</h5>
-                    <ul class="space-y-4 text-sm text-white/40">
-                        <li><a href="#why-us" class="hover:text-premium-gold transition-colors">Why Us</a></li>
-                        <li><a href="#solutions" class="hover:text-premium-gold transition-colors">Solutions</a></li>
-                        <li><a href="#funding" class="hover:text-premium-gold transition-colors">Funding</a></li>
+                    <h5 class="font-bold uppercase tracking-widest text-xs mb-8">Quick Links</h5>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="#why-us" class="hover:text-brand-blue transition-colors">Why Us</a></li>
+                        <li><a href="#solutions" class="hover:text-brand-blue transition-colors">Solutions</a></li>
+                        <li><a href="#funding" class="hover:text-brand-blue transition-colors">Funding</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="text-white font-bold uppercase tracking-widest text-xs mb-8">Contact</h5>
-                    <ul class="space-y-4 text-sm text-white/40">
-                        <li>info@deposyt-replica.com</li>
+                    <h5 class="font-bold uppercase tracking-widest text-xs mb-8">Contact</h5>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li>info@deposyt.com</li>
                         <li>1-800-DEPOSYT</li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-white/10">
-                <p>&copy; 2026 Deposyt Replica. All Rights Reserved.</p>
+            <div class="pt-12 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-600">
+                <p>&copy; 2026 Deposyt. All Rights Reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
