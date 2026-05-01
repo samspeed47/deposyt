@@ -754,14 +754,15 @@
 
                 if (titleEl) {
                     titleEl.innerHTML = heroData.text.title;
-                    titleEl.className = `${heroData.styling.fonts.sizes.title} font-black leading-[1.1] mb-8 tracking-tighter text-brand-dark`;
+                    titleEl.className += ` ${heroData.styling.fonts.sizes.title} font-black leading-[1.1] mb-8 tracking-tighter text-brand-dark`;
                 }
                 if (subtitleEl) {
                     subtitleEl.innerHTML = heroData.text.subtitle;
-                    subtitleEl.className = `${heroData.styling.fonts.sizes.subtitle} text-brand-dark/60 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed`;
+                    subtitleEl.className += ` ${heroData.styling.fonts.sizes.subtitle} text-brand-dark/60 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed`;
                 }
                 if (ctaEl) ctaEl.innerText = heroData.text.ctaText;
                 if (trustEl) trustEl.innerText = heroData.text.trustPilot;
+                if (reviewsEl) reviewsEl.innerText = heroData.text.trustPilot;
 
                 const heroSection = document.getElementById('why-us');
                 if (heroSection && heroData.styling) {
