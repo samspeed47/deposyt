@@ -295,6 +295,43 @@
                 transform: none !important;
             }
         }
+
+        /* Premium Industries Intro Styles */
+        .industries-intro-wrapper {
+            background-color: #000;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(219, 39, 119, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.2) 0%, transparent 60%);
+            background-size: 200% 200%;
+            animation: premium-gradient-drift 15s ease infinite alternate;
+            position: relative;
+            padding: 10rem 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes premium-gradient-drift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .btn-premium-cta {
+            background-color: #000;
+            color: #fff;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-premium-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+            background-color: #111;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 
@@ -572,33 +609,39 @@
     </section>
 
     <!-- Industries We Service Section -->
-    <section id="industries-we-service" class="py-32 bg-white overflow-hidden scroll-mt-24">
-        <div class="container mx-auto px-6">
-            <!-- Heading Area -->
-            <div class="text-center mb-20 max-w-4xl mx-auto">
-                <h2 class="text-6xl lg:text-8xl font-black text-brand-dark mb-10 reveal">
-                    Industries We Service
-                </h2>
-                <p class="text-2xl text-brand-dark font-medium mb-6 reveal">
-                    Every client who accepts credit card payments receives a uniquely crafted merchant account management solution delivered by our payments team.
-                </p>
-                <p class="text-lg text-brand-dark/50 mb-12 reveal">
-                    We understand that industries are ever-changing, and that's why we are always there to support and guide your company in any situation.
-                </p>
+    <section id="industries-we-service" class="scroll-mt-24 overflow-hidden">
+        <!-- Dark Premium Intro Area -->
+        <div class="industries-intro-wrapper">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-6xl lg:text-8xl font-black text-white mb-10 reveal">
+                        Industries We Service
+                    </h2>
+                    <p class="text-2xl text-white/90 font-medium mb-6 reveal">
+                        Every client who accepts credit card payments receives a uniquely crafted merchant account management solution delivered by our payments team.
+                    </p>
+                    <p class="text-lg text-white/60 mb-12 reveal">
+                        We understand that industries are ever-changing, and that's why we are always there to support and guide your company in any situation.
+                    </p>
 
-                <!-- Center CTA -->
-                <div class="reveal mb-6">
-                    <a href="#get-started" class="btn-black py-5 px-12 rounded-xl text-lg font-black inline-flex items-center space-x-4 shadow-2xl hover:scale-105 transition-all">
-                        <img src="deposyt-logo-v2.svg" alt="Z" class="h-6 brightness-0 invert">
-                        <span>Get Processing Now</span>
-                    </a>
+                    <!-- Center CTA -->
+                    <div class="reveal mb-6">
+                        <a href="#get-started" class="btn-premium-cta py-5 px-12 rounded-xl text-lg font-black inline-flex items-center space-x-4 transition-all">
+                            <img src="deposyt-logo-v2.svg" alt="Z" class="h-6 brightness-0 invert">
+                            <span>Get Processing Now</span>
+                        </a>
+                    </div>
+                    <p class="text-sm font-bold text-white/40 reveal uppercase tracking-widest">Claim Your FREE Consultation Today.</p>
                 </div>
-                <p class="text-sm font-bold text-brand-dark reveal">Claim Your FREE Consultation Today.</p>
             </div>
+        </div>
 
-            <!-- Industries Grid -->
-            <div id="industries-we-service-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
-                <!-- Populated via high-fidelity JS array -->
+        <!-- Grid Area (White Background) -->
+        <div class="py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div id="industries-we-service-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+                    <!-- Populated via high-fidelity JS array -->
+                </div>
             </div>
         </div>
     </section>
