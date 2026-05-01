@@ -772,32 +772,8 @@
 
 
                 // Load Industries We Service
-                const industriesDataDetailed = [
-                    { name: "Stripe", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/stripe.png" },
-                    { name: "Shopify", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/shopify.png" },
-                    { name: "Square", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/square.png" },
-                    { name: "Paypal", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/paypal.png" },
-                    { name: "Retail", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/retail.png" },
-                    { name: "Small Business", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/small-business.png" },
-                    { name: "High Risk", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/high-risk.png" },
-                    { name: "B2B", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/b2b.png" },
-                    { name: "E-Commerce", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/ecommerce.png" },
-                    { name: "Saas", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/saas.png" },
-                    { name: "Coaching", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/coaching.png" },
-                    { name: "Diet/Fitness", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/diet-fitness.png" },
-                    { name: "Nutraceutical", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/nutraceutical.png" },
-                    { name: "CBD", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/cbd.png" },
-                    { name: "Startup", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/startup.png" },
-                    { name: "Credit Repair", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/credit-repair.png" },
-                    { name: "Multilevel", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/multilevel.png" },
-                    { name: "Jet Charter", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/jet-charter.png" },
-                    { name: "Non-Profit", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/non-profit.png" },
-                    { name: "Direct Response", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/direct-response.png" },
-                    { name: "Cash Discount", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/cash-discount.png" },
-                    { name: "Non-Profit", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/non-profit.png" },
-                    { name: "Tradeshow/Events", icon: "https://www.deposyt.com/wp-content/uploads/2022/08/tradeshow-events.png" },
-                    { name: "And Many More!", icon: "deposyt-logo-v2.svg" }
-                ];
+                const industriesRes = await fetch(`data/industries.json?v=${version}`);
+                const industriesDataDetailed = await industriesRes.json();
                 const industriesGrid = document.getElementById('industries-we-service-grid');
                 if (industriesGrid) {
                     industriesGrid.innerHTML = industriesDataDetailed.map(ind => `
