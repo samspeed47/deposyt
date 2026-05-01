@@ -326,11 +326,79 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .btn-premium-cta:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
-            background-color: #111;
-            border-color: rgba(255, 255, 255, 0.3);
+        /* Funding Hero Specific Styles */
+        .highlight-mint {
+            background-color: #E1FFD1;
+            padding: 0 0.5rem;
+            display: inline-block;
+            line-height: 1.1;
+        }
+
+        .floating-money {
+            position: absolute;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .money-1 { top: 20%; right: 40%; animation: float-drift 6s ease-in-out infinite; }
+        .money-2 { top: 40%; right: 35%; animation: float-drift 8s ease-in-out 1s infinite; }
+        .money-3 { bottom: 30%; right: 45%; animation: float-drift 7s ease-in-out 2s infinite; }
+
+        @keyframes float-drift {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .geometric-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background-color: #E8F4FF;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        /* Logo Marquee */
+        .logo-marquee-container {
+            background-color: #F1F8FF;
+            padding: 3rem 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .logo-marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: marquee-scroll 40s linear infinite;
+        }
+
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .logo-item {
+            display: flex;
+            align-items: center;
+            padding: 0 4rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #000;
+            opacity: 0.7;
+            text-transform: lowercase;
+            letter-spacing: -0.05em;
+        }
+
+        .logo-item img {
+            height: 1.5rem;
+            margin-right: 0.75rem;
+            filter: grayscale(1) brightness(0);
         }
     </style>
 </head>
@@ -647,23 +715,92 @@
     </section>
 
     <!-- Funding Section -->
-    <section id="funding" class="py-32 relative overflow-hidden bg-white">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
-            <div class="lg:w-1/2 reveal-left">
-                <img src="assets/img/funding.png" alt="Capital Growth"
-                    class="rounded-[3rem] shadow-2xl border border-gray-100">
+    <!-- Funding Section -->
+    <section id="funding" class="pt-32 relative overflow-hidden bg-white scroll-mt-24">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20 relative z-10">
+            <!-- Left Side -->
+            <div class="lg:w-3/5 reveal-left">
+                <h2 class="text-6xl lg:text-7xl font-black mb-12 text-brand-dark leading-[1.1] tracking-tighter">
+                    Get Business <br>
+                    <span class="highlight-mint">Funding And Real</span> <br>
+                    <span class="highlight-mint">Time Financing.</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 mb-12">
+                    <div class="flex items-center space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold text-brand-dark">Grow your business faster</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold text-brand-dark">Pay at your own pace</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold text-brand-dark">Flexible working capital</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-dark flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-xl font-bold text-brand-dark">No hidden fees</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-start space-y-4">
+                    <a href="#get-started" class="btn-black py-5 px-14 rounded-2xl text-xl font-black flex items-center space-x-4 shadow-3xl hover:scale-105 transition-all">
+                        <span>Apply Now</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                    <p class="text-sm font-bold text-brand-dark/50 ml-2">Fast & Easy Business Funding</p>
+                </div>
             </div>
-            <div class="lg:w-1/2 reveal-right">
-                <h2 id="funding-title" class="text-5xl font-black mb-8 text-brand-dark"><!-- Loaded via JSON --></h2>
-                <p id="funding-description" class="text-brand-dark/50 text-lg mb-10 leading-relaxed">
-                    <!-- Loaded via JSON -->
-                </p>
-                <ul id="funding-features" class="space-y-6 mb-12">
-                    <!-- Loaded via JSON -->
-                </ul>
-                <a id="funding-cta" href="#get-started"
-                    class="inline-block bg-gray-900 hover:bg-black text-white font-bold py-4 px-10 rounded-full transition-all uppercase tracking-widest text-xs">Explore
-                    Funding</a>
+
+            <!-- Right Side -->
+            <div class="lg:w-2/5 relative reveal-right">
+                <div class="geometric-shape"></div>
+                <img src="assets/img/funding_person.png" alt="Funding Specialist" class="relative z-10 w-full h-auto drop-shadow-2xl">
+                
+                <!-- Floating Money Doodles -->
+                <div class="floating-money money-1 text-4xl text-green-500 font-black">$</div>
+                <div class="floating-money money-2 text-5xl text-green-400 font-black">$</div>
+                <div class="floating-money money-3 text-3xl text-green-600 font-black">$</div>
+            </div>
+        </div>
+
+        <!-- Logo Marquee Band -->
+        <div class="logo-marquee-container mt-20">
+            <div class="logo-marquee-track">
+                <!-- Row 1 -->
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/shopify.svg" alt="">shopify</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/woocommerce.svg" alt="">woocommerce</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/magento.svg" alt="">magento</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/clickfunnels.svg" alt="">clickfunnels</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kajabi.svg" alt="">kajabi</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/authorizenet.svg" alt="">authorize.net</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/spreedly.svg" alt="">spreedly</div>
+                <div class="logo-item">samcart</div>
+                <div class="logo-item">infusionsoft</div>
+                <div class="logo-item">paykickstart</div>
+                <div class="logo-item">nmi</div>
+                <!-- Row 2 (Duplicate for loop) -->
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/shopify.svg" alt="">shopify</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/woocommerce.svg" alt="">woocommerce</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/magento.svg" alt="">magento</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/clickfunnels.svg" alt="">clickfunnels</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/kajabi.svg" alt="">kajabi</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/authorizenet.svg" alt="">authorize.net</div>
+                <div class="logo-item"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/spreedly.svg" alt="">spreedly</div>
+                <div class="logo-item">samcart</div>
+                <div class="logo-item">infusionsoft</div>
+                <div class="logo-item">paykickstart</div>
+                <div class="logo-item">nmi</div>
             </div>
         </div>
     </section>
