@@ -400,6 +400,62 @@
             margin-right: 0.75rem;
             filter: grayscale(1) brightness(0);
         }
+
+        /* Partners & Agents Styles */
+        .expert-card {
+            background: #fff;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .expert-card.highlighted {
+            border: 2px solid #000;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: scale(1.02);
+        }
+        .expert-card.muted {
+            opacity: 0.4;
+        }
+
+        .squiggle-pink {
+            position: absolute;
+            z-index: 20;
+            animation: float-drift 5s ease-in-out infinite;
+        }
+
+        .blob-pale-green {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #E1FFD1;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.6;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .agent-visual-container {
+            position: relative;
+        }
+        .agent-visual-container::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #006DFF;
+            border-radius: 3rem;
+            transform: translate(20px, 20px);
+            z-index: -1;
+            opacity: 0.2;
+        }
     </style>
 </head>
 
@@ -805,27 +861,114 @@
         </div>
     </section>
 
-    <!-- Partners & Agents Section -->
-    <section id="partners" class="py-32 bg-brand-lightBlue">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal-stagger">
-                <!-- Partners -->
-                <div id="partners-box" class="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl">
-                    <h2 id="partners-title" class="text-4xl font-black mb-6 text-brand-dark"><!-- Loaded via JSON -->
-                    </h2>
-                    <p id="partners-description" class="text-brand-dark/50 mb-8 leading-relaxed">
-                        <!-- Loaded via JSON -->
-                    </p>
-                    <a id="partners-cta" href="#get-started"
-                        class="btn-black py-4 px-8 rounded-xl font-bold inline-block">Partner Sign Up</a>
+    <!-- Partners Section -->
+    <section id="partners" class="py-32 relative overflow-hidden bg-white scroll-mt-24">
+        <div class="blob-pale-green -top-20 -left-20"></div>
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
+            <!-- Left Side -->
+            <div class="lg:w-1/2 reveal-left">
+                <h2 class="text-6xl lg:text-7xl font-black mb-10 text-brand-dark leading-[1.1] tracking-tighter relative">
+                    A Network Of <br>
+                    <span class="relative">Experts <div class="absolute -bottom-2 left-0 w-full h-3 bg-[#61CE70]/30 rounded-full"></div></span> To Grow <br>
+                    Your Business.
+                </h2>
+                <p class="text-xl text-brand-dark/70 mb-10 max-w-lg leading-relaxed">
+                    When you work with Deposyt™, you gain access to our curated network of experts to help your business grow.
+                </p>
+                <a href="#get-started" class="btn-black py-5 px-12 rounded-2xl text-lg font-black inline-flex items-center space-x-4 shadow-xl hover:scale-105 transition-all">
+                    <span>Become A Partner</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+            </div>
+
+            <!-- Right Side: Expert Cards Grid -->
+            <div class="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 relative reveal-right">
+                <div class="space-y-4">
+                    <div class="expert-card highlighted">
+                        <img src="https://i.pravatar.cc/150?u=expert1" class="w-12 h-12 rounded-full grayscale" alt="">
+                        <div class="space-y-2 flex-1">
+                            <div class="h-2 w-3/4 bg-gray-100 rounded"></div>
+                            <div class="h-2 w-1/2 bg-gray-50 rounded"></div>
+                        </div>
+                        <div class="text-green-500 font-bold">$</div>
+                    </div>
+                    <div class="expert-card">
+                        <img src="https://i.pravatar.cc/150?u=expert2" class="w-12 h-12 rounded-full grayscale" alt="">
+                        <div class="space-y-2 flex-1">
+                            <div class="h-2 w-3/4 bg-gray-100 rounded"></div>
+                            <div class="h-2 w-1/2 bg-gray-50 rounded"></div>
+                        </div>
+                    </div>
+                    <div class="expert-card">
+                        <img src="https://i.pravatar.cc/150?u=expert3" class="w-12 h-12 rounded-full grayscale" alt="">
+                        <div class="space-y-2 flex-1">
+                            <div class="h-2 w-3/4 bg-gray-100 rounded"></div>
+                            <div class="h-2 w-1/2 bg-gray-50 rounded"></div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Agents -->
-                <div id="agents-box" class="bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl">
-                    <h2 id="agents-title" class="text-4xl font-black mb-6 text-brand-dark"><!-- Loaded via JSON --></h2>
-                    <p id="agents-description" class="text-brand-dark/50 mb-8 leading-relaxed"><!-- Loaded via JSON -->
-                    </p>
-                    <a id="agents-cta" href="#get-started"
-                        class="btn-black py-4 px-8 rounded-xl font-bold inline-block">Agent Registration</a>
+                <div class="space-y-4 mt-8 md:mt-12">
+                    <div class="expert-card muted">
+                        <img src="https://i.pravatar.cc/150?u=expert4" class="w-12 h-12 rounded-full grayscale" alt="">
+                        <div class="space-y-2 flex-1">
+                            <div class="h-2 w-3/4 bg-gray-100 rounded"></div>
+                            <div class="h-2 w-1/2 bg-gray-50 rounded"></div>
+                        </div>
+                    </div>
+                    <div class="expert-card muted">
+                        <img src="https://i.pravatar.cc/150?u=expert5" class="w-12 h-12 rounded-full grayscale" alt="">
+                        <div class="space-y-2 flex-1">
+                            <div class="h-2 w-3/4 bg-gray-100 rounded"></div>
+                            <div class="h-2 w-1/2 bg-gray-50 rounded"></div>
+                        </div>
+                    </div>
+                    <div class="expert-card muted">
+                        <img src="https://i.pravatar.cc/150?u=expert6" class="w-12 h-12 rounded-full grayscale" alt="">
+                        <div class="space-y-2 flex-1">
+                            <div class="h-2 w-3/4 bg-gray-100 rounded"></div>
+                            <div class="h-2 w-1/2 bg-gray-50 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Doodle -->
+                <div class="absolute -left-10 top-1/2 text-brand-blue opacity-30 transform -rotate-12 hidden lg:block">
+                    <svg class="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M21 7l-9 9-4-4-1.4 1.4L12 18.8 22.4 8.4 21 7z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section id="agents" class="py-32 relative overflow-hidden bg-white scroll-mt-24 border-t border-gray-50">
+        <div class="blob-pale-green top-0 right-0 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
+            <!-- Left Side -->
+            <div class="lg:w-1/2 reveal-left">
+                <h2 class="text-6xl lg:text-7xl font-black mb-10 text-brand-dark leading-[1.1] tracking-tighter relative">
+                    Become A <br>
+                    <span class="relative">Deposyt™ <div class="absolute -bottom-2 left-0 w-full h-3 bg-[#61CE70]/30 rounded-full"></div></span> Agent.
+                </h2>
+                <p class="text-xl text-brand-dark/70 mb-10 max-w-lg leading-relaxed font-medium">
+                    Be The Payments Superstar To Your Client and Continue Sharing in The Monthly Revenue.
+                </p>
+                <div class="flex flex-col items-start space-y-4">
+                    <a href="#get-started" class="btn-black py-5 px-12 rounded-2xl text-lg font-black inline-flex items-center space-x-4 shadow-xl hover:scale-105 transition-all">
+                        <span>Become an Agent</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                    <p class="text-sm font-bold text-brand-dark/40 ml-2 uppercase tracking-widest">Start earning lifetime residuals.</p>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="lg:w-1/2 relative reveal-right">
+                <div class="geometric-shape"></div>
+                <div class="agent-visual-container">
+                    <img src="assets/img/agent_person.png" alt="Agent Success" class="relative z-10 w-full h-auto drop-shadow-3xl">
+                </div>
+                <!-- Doodles -->
+                <div class="squiggle-pink top-1/4 -right-10 text-pink-400 opacity-50">
+                    <svg class="w-16 h-16" viewBox="0 0 100 40" fill="none" stroke="currentColor" stroke-width="5"><path d="M0 20 Q10 0 20 20 T40 20 T60 20 T80 20 T100 20" /></svg>
                 </div>
             </div>
         </div>
