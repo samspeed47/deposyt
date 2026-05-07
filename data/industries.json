@@ -1,25 +1,38 @@
 [
-    { "name": "Stripe", "icon": "https://cdn.worldvectorlogo.com/logos/stripe-4.svg", "bgColor": "bg-[#E0F2FE]" },
-    { "name": "Shopify", "icon": "https://cdn.worldvectorlogo.com/logos/shopify.svg", "bgColor": "bg-[#F3E8FF]" },
-    { "name": "Square", "icon": "https://cdn.worldvectorlogo.com/logos/square-3.svg", "bgColor": "bg-[#DCFCE7]" },
-    { "name": "Paypal", "icon": "https://cdn.worldvectorlogo.com/logos/paypal-3.svg", "bgColor": "bg-[#FEE2E2]" },
-    { "name": "Retail", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/retail.png", "bgColor": "bg-[#FFEDD5]" },
-    { "name": "Small Business", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/small-business.png", "bgColor": "bg-[#FEF9C3]" },
-    { "name": "High Risk", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/high-risk.png", "bgColor": "bg-[#E0F2FE]" },
-    { "name": "B2B", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/b2b.png", "bgColor": "bg-[#F3E8FF]" },
-    { "name": "E-Commerce", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/ecommerce.png", "bgColor": "bg-[#DCFCE7]" },
-    { "name": "Saas", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/saas.png", "bgColor": "bg-[#FEE2E2]" },
-    { "name": "Coaching", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/coaching.png", "bgColor": "bg-[#FFEDD5]" },
-    { "name": "Diet/Fitness", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/diet-fitness.png", "bgColor": "bg-[#FEF9C3]" },
-    { "name": "Nutraceutical", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/nutraceutical.png", "bgColor": "bg-[#E0F2FE]" },
-    { "name": "CBD", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/cbd.png", "bgColor": "bg-[#F3E8FF]" },
-    { "name": "Startup", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/startup.png", "bgColor": "bg-[#DCFCE7]" },
-    { "name": "Credit Repair", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/credit-repair.png", "bgColor": "bg-[#FEE2E2]" },
-    { "name": "Multilevel", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/multilevel.png", "bgColor": "bg-[#FFEDD5]" },
-    { "name": "Jet Charter", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/jet-charter.png", "bgColor": "bg-[#FEF9C3]" },
-    { "name": "Non-Profit", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/non-profit.png", "bgColor": "bg-[#E0F2FE]" },
-    { "name": "Direct Response", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/direct-response.png", "bgColor": "bg-[#F3E8FF]" },
-    { "name": "Cash Discount", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/cash-discount.png", "bgColor": "bg-[#DCFCE7]" },
-    { "name": "Tradeshow/Events", "icon": "https://www.deposyt.com/wp-content/uploads/2022/08/tradeshow-events.png", "bgColor": "bg-[#FEE2E2]" },
-    { "name": "And Many More!", "icon": "deposyt-logo-v2.svg", "bgColor": "bg-white shadow-xl" }
+    {
+        "name": "Entrepreneurs & Solopreneurs",
+        "icon": "assets/icons/service-customer.svg",
+        "description": "Stop doing $15/hr tasks. Focus on what only you can do.",
+        "bgColor": "bg-brand-light"
+    },
+    {
+        "name": "Law Firms & Legal Professionals",
+        "icon": "assets/icons/service-document.svg",
+        "description": "Document prep, client scheduling, intake coordination — handled professionally.",
+        "bgColor": "bg-brand-light"
+    },
+    {
+        "name": "Coaches & Consultants",
+        "icon": "assets/icons/service-calendar.svg",
+        "description": "Client onboarding, emails, calendar, research — all off your plate.",
+        "bgColor": "bg-brand-light"
+    },
+    {
+        "name": "Agency Owners",
+        "icon": "assets/icons/service-lead.svg",
+        "description": "Delegate the ops work. Your team focuses on delivery and growth.",
+        "bgColor": "bg-brand-light"
+    },
+    {
+        "name": "E-commerce Businesses",
+        "icon": "assets/icons/service-crm.svg",
+        "description": "Order tracking, customer support, data entry, supplier comms.",
+        "bgColor": "bg-brand-light"
+    },
+    {
+        "name": "Small Business Owners",
+        "icon": "assets/icons/service-research.svg",
+        "description": "A VA that functions like an in-house admin at a fraction of the cost.",
+        "bgColor": "bg-brand-light"
+    }
 ]
